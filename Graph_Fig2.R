@@ -13,6 +13,7 @@ full_path_eff_0.0 <- paste0(input_path, "vaccine_compliance_0.0.csv")
 full_path_eff_0.4 <- paste0(input_path, "vaccine_compliance_0.4.csv")
 full_path_eff_0.8 <- paste0(input_path, "vaccine_compliance_0.8.csv")
 
+# TEST COMMENT
 
 # read data with effectiveness 0.0
 data1 <- read.table(file = full_path_eff_0.0,
