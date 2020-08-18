@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun 19 12:17:19 2020
+
+@author: sirikonanoor
+"""
+
+
+resolved comments:
+    
+    ### FO: we need to be clear about this
+    ### if base_inf is 0.1 and base_imm = 0.1, then this
+    ### won't work, right? Let's talk about how to better
+    ### code this...
+    
+    
+    
+    ### FO: you need to pass "scale" into the function!
+    
+    
