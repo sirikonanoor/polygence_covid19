@@ -267,7 +267,7 @@ delt = 1.0 # 0.1
 # number of people
 num_people = 2000
 
-# size of map (in km) we are simulating SF, which is ~121 km^2
+# size of map (in meters) 500 m^2 = 22m * 22m, for which scale = 11km
 scale = 11.0
 
 # create an array of ages with a distribution that is specific to San Francisco
@@ -390,6 +390,7 @@ for sim in range(num_sims):
         health_state = updateRecovery(health_state,
                                          time_since_infected,
                                          recovery_time)
+        # plot!
         # PlotSim(people_pos, 
         #         health_state, 
         #         scale, 
@@ -417,6 +418,6 @@ data = np.insert(data, 2, protective_effect, axis = 1)
 data = np.insert(data, 3, final_reff, axis = 1)
 
 # save data as .csv for plotting in RStudio using ggplot2
-np.savetxt(fname = "/Users/sirikonanoor/Documents/Polygence/csvfiles/vaccine_compliance_0.9.csv",
+np.savetxt(fname = "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/vaccine_compliance_0.9.csv",
           X = data,
           delimiter = ",")

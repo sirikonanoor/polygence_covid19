@@ -8,7 +8,7 @@ library(ggplot2)
 
 # Figure 3. a)
 # define paths
-input_path <- "/Users/sirikonanoor/Documents/Polygence/csvfiles/"
+input_path <- "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/"
 full_path_comp_0.0 <- paste0(input_path, "vaccine_efficacy_0.0.csv")
 full_path_comp_0.4 <- paste0(input_path, "vaccine_efficacy_0.4.csv")
 full_path_comp_0.8 <- paste0(input_path, "vaccine_efficacy_0.8.csv")
@@ -45,14 +45,19 @@ full_data %>%
   ggplot(aes(x = vaccine_effectiveness,
              y = percent_infected,
              group = compliance)) + 
-  geom_point(aes(colour = compliance),
-             size = 0.5) +
   stat_summary(fun.y = "mean",
                fun.ymin = "mean",
                fun.ymax= "mean",
-               size = 0.1,
+               size = 1,
                width = 5,
-               geom = "crossbar",
+               geom = "point",
+               aes(color = compliance)) +
+  stat_summary(fun.y = "mean",
+               fun.ymin = "mean",
+               fun.ymax= "mean",
+               size = 0.4,
+               width = 5,
+               geom = "line",
                aes(color = compliance)) +
   labs(x = "Vaccine Effectiveness (%)",
        y = "Percent Infected",
@@ -68,7 +73,7 @@ full_data %>%
 
 # Figure 3. b)
 # define paths
-input_path <- "/Users/sirikonanoor/Documents/Polygence/csvfiles/"
+input_path <- "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/"
 full_path_comp_0.0 <- paste0(input_path, "vaccine_efficacy_0.0.csv")
 full_path_comp_0.4 <- paste0(input_path, "vaccine_efficacy_0.4.csv")
 full_path_comp_0.8 <- paste0(input_path, "vaccine_efficacy_0.8.csv")
@@ -105,14 +110,19 @@ full_data %>%
   ggplot(aes(x = vaccine_effectiveness,
              y = protection,
              group = compliance)) + 
-  geom_point(aes(colour = compliance),
-             size = 0.5) +
   stat_summary(fun.y = "mean",
                fun.ymin = "mean",
                fun.ymax= "mean",
-               size = 0.1,
+               size = 1,
                width = 5,
-               geom = "crossbar",
+               geom = "point",
+               aes(color = compliance)) +
+  stat_summary(fun.y = "mean",
+               fun.ymin = "mean",
+               fun.ymax= "mean",
+               size = 0.4,
+               width = 5,
+               geom = "line",
                aes(color = compliance)) +
   labs(x = "Vaccine Effectiveness (%)",
        y = "Protective Effect (%)",
@@ -125,9 +135,10 @@ full_data %>%
   scale_x_continuous(limits = c(-5, 105),
                      breaks = seq(0, 105, 20))
 
+
 # Figure 3. c)
 # define paths
-input_path <- "/Users/sirikonanoor/Documents/Polygence/csvfiles/"
+input_path <- "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/"
 full_path_comp_0.0 <- paste0(input_path, "vaccine_efficacy_0.0.csv")
 full_path_comp_0.4 <- paste0(input_path, "vaccine_efficacy_0.4.csv")
 full_path_comp_0.8 <- paste0(input_path, "vaccine_efficacy_0.8.csv")
@@ -164,14 +175,19 @@ full_data %>%
   ggplot(aes(x = vaccine_effectiveness,
              y = reff,
              group = compliance)) + 
-  geom_point(aes(colour = compliance),
-             size = 0.5) +
   stat_summary(fun.y = "mean",
                fun.ymin = "mean",
                fun.ymax= "mean",
-               size = 0.1,
+               size = 1,
                width = 5,
-               geom = "crossbar",
+               geom = "point",
+               aes(color = compliance)) + 
+  stat_summary(fun.y = "mean",
+               fun.ymin = "mean",
+               fun.ymax= "mean",
+               size = 0.4,
+               width = 5,
+               geom = "line",
                aes(color = compliance)) +
   labs(x = "Vaccine Effectiveness (%)",
        y = "Reff",
@@ -183,6 +199,4 @@ full_data %>%
                      breaks = seq(0, 0.1, 0.01)) +
   scale_x_continuous(limits = c(-5, 105),
                      breaks = seq(0, 105, 20))
-
-
 

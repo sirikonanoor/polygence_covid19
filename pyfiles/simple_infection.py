@@ -261,7 +261,7 @@ def calculateExactReff(health_state,
 # PARAMETERS 
 
 # diffusion coefficient (km^2 per hour)
-D = 9.0 * math.pi # 1.25
+D = 9.0 * math.pi 
 
 # time scale (days), so delt =  1 day
 delt = 1.0 # 0.1
@@ -269,7 +269,7 @@ delt = 1.0 # 0.1
 # number of people
 num_people = 2000
 
-# size of map (in km) we are simulating SF, which is ~121 km^2
+# size of map (in meters) 500 m^2 = 22m * 22m, for which scale = 11km
 scale = 11.0
 
 # create an array of ages with a distribution that is specific to San Francisco
@@ -301,19 +301,19 @@ print (susceptibility)
 
 # initial rate of infection
     # fraction of initial points that will be infected
-base_infection = 0.02
+base_infection = 0.1
 # initial rate of vaccination
     # fraction of initial points that will be vaccinated
 base_vaccination = 0.0
 # vaccine effectiveness
-vaccine_effectiveness = 1.0
+vaccine_effectiveness = 0.1
 
 # critical distance for infection
 critical_distance = 0.2
 # number of days until recovery from infection, uniformly distributed
 recovery_time = np.random.randint(low = 13,
-                                  high = 15,
-                                  size = num_people)
+                                   high = 15,
+                                   size = num_people)
 
 
 
@@ -381,13 +381,14 @@ for sim in range(num_sims):
         health_state = updateRecovery(health_state,
                                          time_since_infected,
                                          recovery_time)
+        # plot!
         # PlotSim(people_pos, 
         #         health_state, 
         #         scale,
         #         pause = 0.000001)
         
         
-
+        
         num_infected = np.sum(health_state == 1)
         percent_infected = (num_infected / num_people) * 100
         # update the percent infected population after each step
@@ -404,6 +405,6 @@ print("new:")
 print(np.shape(reff))
 
 # save data as .csv
-np.savetxt(fname = "/Users/sirikonanoor/Documents/Polygence/csvfiles/test.csv",
-           X = data,
-           delimiter = ",")
+np.savetxt(fname = "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/baseinf_0.02.csv",
+            X = data,
+            delimiter = ",")

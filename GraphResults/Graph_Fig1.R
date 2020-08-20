@@ -7,9 +7,7 @@ library(ggplot2)
 
 
 # Figure 1. a)
-# data <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1a.csv",
-#                    sep = ",")
-data <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/test.csv",
+data <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1a.csv",
                    sep = ",")
 colnames(data) <- c("sim_step", "pct_inf")
 
@@ -27,7 +25,7 @@ data %>%
 
 
 # Figure 1. b)
-data <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1b.csv",
+data <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1b.csv",
                    sep = ",")
 
 colnames(data) <- c("sim_step", "pct_inf")
@@ -46,11 +44,11 @@ data %>%
 
 
 # Figure 1. c)
-data1 <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1c_infonly.csv",
+data1 <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1c_infonly.csv",
                     sep = ",")
 colnames(data1) <- c("sim_step", "pct_inf1")
 
-data2 <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1c_vacc.csv",
+data2 <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1c_vacc.csv",
                     sep = ",")
 colnames(data2) <- c("sim_step", "pct_inf2")
 
@@ -82,7 +80,7 @@ data %>%
 
 
 # Figure 1. d)
-data <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1d.csv",
+data <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1d.csv",
                    sep = ",")
 
 colnames(data) <- c("sim_step", "pct_inf")
@@ -101,11 +99,11 @@ data %>%
 
 
 # Figure 1. e)
-data1 <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1e_infonly.csv",
+data1 <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1e_infonly.csv",
                     sep = ",")
 colnames(data1) <- c("sim_step", "pct_inf1")
 
-data2 <- read.table("/Users/sirikonanoor/Documents/Polygence/csvfiles/fig.1e_vacc.csv",
+data2 <- read.table("/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/fig.1e_vacc.csv",
                     sep = ",")
 colnames(data2) <- c("sim_step", "pct_inf2")
 

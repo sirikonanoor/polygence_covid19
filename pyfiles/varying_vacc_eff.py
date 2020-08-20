@@ -270,7 +270,7 @@ delt = 1.0 # 0.1
 # number of people
 num_people = 2000
 
-# size of map (in km) we are simulating SF, which is ~121 km^2
+# size of map (in meters) 500 m^2 = 22m * 22m, for which scale = 11m
 scale = 11.0
 
 # create an array of ages with a distribution that is specific to San Francisco
@@ -418,6 +418,6 @@ data = np.insert(data, 3, final_reff, axis = 1)
 
 
 # save data as .csv for plotting in RStudio using ggplot2
-np.savetxt(fname = "/Users/sirikonanoor/Documents/Polygence/csvfiles/vaccine_efficacy_1.0.csv",
+np.savetxt(fname = "/Users/sirikonanoor/Documents/polygence_covid19/csvfiles/vaccine_efficacy_1.0.csv",
           X = data,
           delimiter = ",")
